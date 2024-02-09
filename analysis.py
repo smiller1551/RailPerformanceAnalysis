@@ -133,24 +133,36 @@ def main(filenames):
     
     #print(dates)
     
-        
-    xDates = np.array(dates) #create array from dates
-    yBergenPoints = np.array(yBergenValues) #Create array from Bergen Values. Will be blue
-    yMainPoints = np.array(yMainValues) #Create array from Main values. Will be orange
-    yMontclairPoints = np.array(yMontclairValues) #Create array from Montclair values. Will be green
-    yMorristownPoints = np.array(yMorristownValues) #Create array from Morristown values. Will be red
-    yNoPoints = np.array(yNoValues) #Create array from No values. Will be purple. Will be orange on focused graph.
-    yPascackPoints = np.array(yPascackValues) #Create array from Pascack values. Will be brown. Will be green on focused graph. 
-    yRaritanPoints = np.array(yRaritanValues) #Create array from Raritan values. Will be pink
-    yAvgPoints = np.array(yAvgValues) #Create array from the average values. Will be blue on focused graph.
+    #Create arrays out of the values
+    xDates = np.array(dates)
+    yBergenPoints = np.array(yBergenValues)
+    yGladstonePoints = np.array(yGladstoneValues)
+    yMainPoints = np.array(yMainValues)
+    yMontclairPoints = np.array(yMontclairValues)
+    yMorristownPoints = np.array(yMorristownValues)
+    yNoPoints = np.array(yNoValues)
+    yPascackPoints = np.array(yPascackValues)
+    yNortheastPoints = np.array(yNortheastValues)
+    yRaritanPoints = np.array(yRaritanValues)
+    yAvgPoints = np.array(yAvgValues)
     
     #Create Full Graph
-    plt.plot(xDates, yBergenPoints, xDates, yMainPoints, xDates, yMontclairPoints, xDates, yMorristownPoints, xDates, yNoPoints,
-             xDates, yPascackPoints, xDates, yRaritanPoints) #create full graph
-    plt.show() #show the targeted graph
+    plt.plot(xDates, yBergenPoints, c = '#BBCBE2') #plot Bergen points in blue-silver.
+    plt.plot(xDates, yGladstonePoints, c = '#A1D5AE') #plot Gladstone points in mint.
+    plt.plot(xDates, yMainPoints, c = '#FFD006') #plot Main points in yellow.
+    plt.plot(xDates, yMontclairPoints, c = '#E66D5C') #plot Montclair points in salmon.
+    plt.plot(xDates, yMorristownPoints, c = '#00A850') #plot Morristown points in green.
+    plt.plot(xDates, yNoPoints, c = '#00A3E4') #plot no points in blue.
+    plt.plot(xDates, yNortheastPoints, c = '#EE3A43') #plot Northeast values in red.
+    plt.plot(xDates, yPascackPoints, c = '#A0218C') #plot Pascack points in purple.
+    plt.plot(xDates, yRaritanPoints, c = '#FBA536') #plot Raritan points in in orange
+    plt.show() #show the full graph
     
-    plt.plot(xDates, yAvgPoints, xDates, yNoPoints, xDates, yPascackPoints) #create focused graph
-    plt.show() #show the graph
+    #Create Focused graph
+    plt.plot(xDates, yAvgPoints, c = 'black') #plot average values in black.
+    plt.plot(xDates, yNoPoints, c = '#00A3E4') #plot no points in blue.
+    plt.plot(xDates, yPascackPoints, c = '#A0218C') #plot Pascack points in purple.
+    plt.show() #show the focused graph
     
 def oneMonthDF(filename):
     df = cleanAndMean(filename) #create the dataframe
