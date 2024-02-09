@@ -159,7 +159,7 @@ def main(filenames):
     plt.show() #show the full graph
     
     #Create Focused graph
-    plt.plot(xDates, yAvgPoints, c = 'black') #plot average values in black.
+    plt.plot(xDates, yAvgPoints, c = 'black',  linewidth = '4') #plot average values in black.
     plt.plot(xDates, yNoPoints, c = '#00A3E4') #plot no points in blue.
     plt.plot(xDates, yPascackPoints, c = '#A0218C') #plot Pascack points in purple.
     plt.show() #show the focused graph
