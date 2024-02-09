@@ -23,7 +23,7 @@ def cleanAndMean(filename):
                      'actual_time', 'status'], inplace=True) #drop unwanted columns
     dfOriginal.dropna(inplace=True) #drop anything that is NA
 
-    #Find the mean for each line
+    #Find the mean for each line and group by it
     dfNew = dfOriginal.groupby(['line']).mean() #group by the each line's mean late time
     filename = filename[-11:-4] #find the year and month
     dfNew = dfNew.rename(columns={"delay_minutes": f"avg_delay_{filename}"}) #add year and month to column name
