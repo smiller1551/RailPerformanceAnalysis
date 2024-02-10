@@ -165,6 +165,12 @@ def main(filenames):
     plt.show() #show the focused graph
     
 def oneMonthDF(filename):
+    """
+    This function is largely for testing. It will print a Dataframe created by the cleanAndMean function.
+    
+    Args:
+        filename(str): A .csv file
+    """
     df = cleanAndMean(filename) #create the dataframe
     print(df) #print the Dataframe
 
